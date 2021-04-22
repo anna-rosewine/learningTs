@@ -11,14 +11,28 @@ describe("repository", () => {
   it("add method", () => {
     expect.assertions(1);
     const repo = new Repository();
-    const oranges: Purchase = {
+    const PURCHASE_1: Purchase = {
       id: 1,
       title: "Oranges",
       price: 30,
       isBaught: false,
     };
-    repo.add(oranges);
-    expect(repo.getPurchases()).toHaveLength(1);
+    const PURCHASE_2: Purchase = {
+      id: 2,
+      title: "Strawberry",
+      price: 30,
+      isBaught: false,
+    };
+    const PURCHASE_3: Purchase = {
+      id: 3,
+      title: "Lemon",
+      price: 30,
+      isBaught: false,
+    };
+    repo.add(PURCHASE_1);
+    repo.add(PURCHASE_2);
+    repo.add(PURCHASE_3);
+    expect(repo.getById(PURCHASE_3.id)).toEqual(PURCHASE_3);
   });
   it("getById method", () => {
     expect.assertions(1);
@@ -45,5 +59,32 @@ describe("repository", () => {
     repo.add(PURCHASE_2);
     repo.add(PURCHASE_3);
     expect(repo.getById(PURCHASE_2.id)).toEqual(PURCHASE_2);
+  });
+  it("check delete method", () => {
+    expect.assertions(1);
+    const repo = new Repository();
+    const PURCHASE_1: Purchase = {
+      id: 1,
+      title: "Oranges",
+      price: 30,
+      isBaught: false,
+    };
+    const PURCHASE_2: Purchase = {
+      id: 2,
+      title: "Strawberry",
+      price: 30,
+      isBaught: false,
+    };
+    const PURCHASE_3: Purchase = {
+      id: 3,
+      title: "Lemon",
+      price: 30,
+      isBaught: false,
+    };
+    repo.add(PURCHASE_1);
+    repo.add(PURCHASE_2);
+    repo.add(PURCHASE_3);
+    repo.delete(PURCHASE_2.id);
+    expect(repo.getPurchases()).not.toContain(PURCHASE_2);
   });
 });

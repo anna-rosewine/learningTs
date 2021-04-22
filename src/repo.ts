@@ -18,7 +18,6 @@ export class Repository {
   }
 
   delete(id: number): void {
-    const index = this.fullList.findIndex((item) => item.id === id);
-    this.fullList = this.fullList.splice(index, 1);
+    this.fullList = this.fullList.filter((item) => item.id !== id);
   }
 }
