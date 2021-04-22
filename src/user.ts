@@ -40,18 +40,6 @@ class User implements UserInterface{
 
 const user1: User = new User({id: 1, firstName: 'Anna', lastName: 'Wine', email: 'anna@gmail.com'});
 
-// type User = {
-//     id: UserId;
-//     firstName: string;
-//     lastName: string;
-//     email: string;
-// }
-//
-// const user : User = {
-//     id: 1,
-//     firstName: 'Anna',
-//     lastName: 'Wine',
-//     email: 'anna@gmail.com'
-// }
+
 
 
