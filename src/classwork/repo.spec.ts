@@ -1,7 +1,6 @@
 // import { Purchase } from "./purchase.interface";
 import { Repository } from "./repo";
 import { Purchase } from "./purchase.interface";
-import { mockPurchase } from "./test_helper";
 
 describe("repository", () => {
   // eslint-disable-next-line jest/no-hooks

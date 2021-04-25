@@ -36,7 +36,7 @@ class ProductsStorage extends BasicStorage<Product> {
 }
 
 class StoreStorage extends BasicStorage<Store> {
-  getAddresById(id: number) {
+  getAddressById(id: number) {
     if (this.getById(id)) {
       return this.getById(id)?.address;
     } else {
@@ -49,7 +49,7 @@ const productStorage = new ProductsStorage();
 productStorage.getPriceById(1);
 
 const storeStorage = new StoreStorage();
-storeStorage.getAddresById(1);
+storeStorage.getAddressById(1);
 storeStorage.all();
 
 // class StoreStorage implements BasicStorage<Store> {
