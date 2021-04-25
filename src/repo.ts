@@ -17,6 +17,8 @@ export class Repository {
     return this.fullList.find((item) => item.id === id);
   }
 
+  updatePurchase(id: number) {}
+
   delete(id: number): void {
     this.fullList = this.fullList.filter((item) => item.id !== id);
   }
